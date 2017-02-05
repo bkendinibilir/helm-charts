@@ -27,6 +27,7 @@ Master:
 Agent:
   Image: jenkinsci/jnlp-slave
   ImageTag: 2.52
+  Name: jenkins-agent
   Cpu: "200m"
   Memory: "256Mi"
 
