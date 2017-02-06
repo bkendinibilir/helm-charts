@@ -39,3 +39,6 @@ Persistence:
   # storageClass:
   AccessMode: ReadWriteOnce
   Size: 8Gi
+
+Docker:
+# ConfigJson: cat ~/.docker/config.json | base64
