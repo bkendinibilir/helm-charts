@@ -20,9 +20,10 @@ metadata:
   {{- end }}
 spec:
   type: {{ .Values.serviceType }}
-  {{- if .Values.service.externalIP }}
+  {{ if .Values.loadBalancerIP }}loadBalancerIP: {{ .Values.loadBalancerIP }}{{ end }}
+  {{- if .Values.externalIP }}
   externalIPs:
-    -  {{ .Values.service.externalIP }}
+    -  {{ .Values.externalIP }}
   {{- end }}
   selector:
     app: {{ template "fullname" . }}
