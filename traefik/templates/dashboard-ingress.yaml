@@ -9,6 +9,7 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
   annotations:
+    kubernetes.io/ingress.class: "traefik"
   {{- if .Values.dashboard.ingress }}
   {{- range $key, $value := .Values.dashboard.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}

@@ -7,6 +7,8 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - host: {{ .Values.Master.IngressDomain }}
