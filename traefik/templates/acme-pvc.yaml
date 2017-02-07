@@ -14,4 +14,7 @@ spec:
   resources:
     requests:
       storage: {{ .Values.acme.persistence.size | quote }}
+  selector:
+    matchLabels:
+      app: {{ template "fullname" . }}
 {{- end }}
