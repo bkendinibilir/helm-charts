@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for autocache-twitter
+name: autocache-twitter
+version: 0.1.0

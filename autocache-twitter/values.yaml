@@ -1,0 +1,19 @@
+image:
+  repository: eu.gcr.io/techstories-155021/autocache-twitter
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+schedule: "15 13 * * *"
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 1Mi

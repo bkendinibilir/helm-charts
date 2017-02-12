@@ -1,0 +1,32 @@
+apiVersion: batch/v2alpha1
+kind: CronJob
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+spec:
+  schedule: "{{ .Values.schedule }}"
+  concurrencyPolicy: Replace
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            volumeMounts:
+            - name: data
+              mountPath: /data
+            resources:
+{{ toYaml .Values.resources | indent 16 }}
+          restartPolicy: OnFailure
+          volumes:
+          - name: data
+          {{- if .Values.persistence.enabled }}
+            persistentVolumeClaim:
+              claimName: {{ template "fullname" . }}
+          {{- else }}
+            emptyDir: {}
+          {{- end -}}
+         
