@@ -1,0 +1,17 @@
+image:
+  repository: docker.io/analogic/poste.io
+  tag: latest
+  pullPolicy: IfNotPresent
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 1024Mi
+  requests:
+    cpu: 200m
+    memory: 512Mi
+
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 10Gi
