@@ -3,6 +3,9 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
+serviceType: LoadBalancer
+hostPort: false
+
 resources:
   limits:
     cpu: 300m
