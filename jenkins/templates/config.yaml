@@ -45,10 +45,10 @@ data:
                   <command></command>
                   <args>${computer.jnlpmac} ${computer.name}</args>
                   <ttyEnabled>false</ttyEnabled>
-                  <resourceRequestCpu>{{.Values.Agent.Cpu}}</resourceRequestCpu>
-                  <resourceRequestMemory>{{.Values.Agent.Memory}}</resourceRequestMemory>
-                  <resourceLimitCpu>{{.Values.Agent.Cpu}}</resourceLimitCpu>
-                  <resourceLimitMemory>{{.Values.Agent.Memory}}</resourceLimitMemory>
+                  <resourceRequestCpu>{{.Values.Agent.CpuRequests}}</resourceRequestCpu>
+                  <resourceRequestMemory>{{.Values.Agent.MemoryRequests}}</resourceRequestMemory>
+                  <resourceLimitCpu>{{.Values.Agent.CpuLimimts}}</resourceLimitCpu>
+                  <resourceLimitMemory>{{.Values.Agent.MemoryLimits}}</resourceLimitMemory>
                   <envVars/>
                 </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
               </containers>

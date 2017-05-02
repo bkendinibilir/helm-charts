@@ -68,8 +68,11 @@ spec:
               name: slavelistener
           resources:
             requests:
-              cpu: "{{.Values.Master.Cpu}}"
-              memory: "{{.Values.Master.Memory}}"
+              cpu: "{{.Values.Master.CpuRequests}}"
+              memory: "{{.Values.Master.MemoryRequests}}"
+            limits:
+              cpu: "{{.Values.Master.CpuLimits}}"
+              memory: "{{.Values.Master.MemoryLimits}}"
           volumeMounts:
             -
               mountPath: /var/jenkins_home

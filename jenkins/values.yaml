@@ -11,8 +11,10 @@ Master:
   Component: "jenkins-master"
   AdminUser: admin
 # AdminPassword: <defaults to random>
-  Cpu: "200m"
-  Memory: "256Mi"
+  CpuRequests: "200m"
+  CpuLimits: "500m"
+  MemoryRequests: "512Mi"
+  MemoryLimits: "1024Mi"
 # Set min/max heap here if needed with:
 # JavaOpts: "-Xms512m -Xmx512m"
   ServicePort: 8080
@@ -28,8 +30,10 @@ Agent:
   Image: jenkinsci/jnlp-slave
   ImageTag: 2.52
   Name: jenkins-agent
-  Cpu: "200m"
-  Memory: "256Mi"
+  CpuRequests: "200m"
+  MemoryRequests: "256Mi"
+  CpuLimits: "500m"
+  MemoryLimits: "1024Mi"
 
 Persistence:
   Enabled: true
